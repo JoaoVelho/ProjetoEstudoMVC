@@ -1,0 +1,14 @@
+@model IEnumerable<ProjetoEstudoMVC.Models.Musica>
+
+<h2>Minhas músicas</h2>
+<a href="/Musicas/Cadastrar" class="btn btn-primary">Nova música</a>
+<hr>
+
+@foreach (var musica in Model)
+{
+    <p>Nome: @musica.Nome</p>
+    <p>Gênero: @musica.Genero</p>
+    <a href="/Musicas/Editar/@musica.Id" class="btn btn-success">Editar</a>
+    <a href="/Musicas/Deletar/@musica.Id" class="btn btn-danger">Deletar</a>
+    <hr>
+}

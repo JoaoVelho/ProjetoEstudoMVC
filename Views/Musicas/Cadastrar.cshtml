@@ -1,0 +1,10 @@
+@model ProjetoEstudoMVC.Models.Musica
+<h2>Cadastro de música</h2>
+
+<form class="form-horizontal" asp-controller="Musicas" asp-action="Salvar" method="POST">
+    <input type="hidden" asp-for="Id">
+    <input type="text" class="form-control" asp-for="Nome" placeholder="Nome">
+    <input type="text" class="form-control" asp-for="Genero" placeholder="Gênero">
+    <input type="hidden" asp-for="ArtistaId" value=@ViewData["user"] as string>
+    <button class="btn btn-success">Cadastrar</button>
+</form>

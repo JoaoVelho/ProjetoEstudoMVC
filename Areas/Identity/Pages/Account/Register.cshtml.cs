@@ -78,7 +78,7 @@ namespace ProjetoEstudoMVC.Areas.Identity.Pages.Account
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
             if (ModelState.IsValid)
             {
-                var user = new Artista { UserName = Input.Nome, Email = Input.Email, Nome = Input.Nome };
+                var user = new Artista { UserName = Input.Email, Email = Input.Email, Nome = Input.Nome };
                 var result = await _userManager.CreateAsync(user, Input.Password);
                 if (result.Succeeded)
                 {

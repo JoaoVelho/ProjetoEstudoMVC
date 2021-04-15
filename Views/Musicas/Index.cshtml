@@ -1,0 +1,18 @@
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<Artista> SignInManager
+@model IEnumerable<ProjetoEstudoMVC.Models.Musica>
+
+<h2>Todas as músicas</h2>
+@if (SignInManager.IsSignedIn(User)) 
+{
+    <a href="/Musicas/Ver" class="btn btn-primary">Minhas músicas</a>
+}
+<hr>
+
+@foreach (var musica in Model)
+{
+    <p>Nome: @musica.Nome</p>
+    <p>Gênero: @musica.Genero</p>
+    <p>Artista: @musica.Artista.Nome</p>
+    <hr>
+}
