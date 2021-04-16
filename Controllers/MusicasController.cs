@@ -22,7 +22,9 @@ namespace ProjetoEstudoMVC.Controllers
         }
 
         public IActionResult Index() {
-            List<Musica> listaMusicas = _database.Musicas.Include(m => m.Artista).ToList();
+            List<Musica> listaMusicas = _database.Musicas
+                .Include(m => m.Artista)
+                .ToList();
             return View(listaMusicas);
         }
 
