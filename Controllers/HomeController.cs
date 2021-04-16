@@ -20,7 +20,7 @@ namespace ProjetoEstudoMVC.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            return RedirectToAction("Index", "Musicas");
         }
 
         public IActionResult Privacy()
