@@ -58,7 +58,7 @@ namespace ProjetoEstudoMVC.Controllers
             Musica musica = _database.Musicas.First(registro => registro.Id == id);
             _database.Musicas.Remove(musica);
             _database.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Ver");
         }
 
         [Authorize]
@@ -72,7 +72,7 @@ namespace ProjetoEstudoMVC.Controllers
                 _database.Entry(musicaBanco).CurrentValues.SetValues(musica);
             }
             _database.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Ver");
         }
     }
 }

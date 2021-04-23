@@ -3,8 +3,10 @@
 
 <form class="form-horizontal" asp-controller="Musicas" asp-action="Salvar" method="POST">
     <input type="hidden" asp-for="Id">
-    <input type="text" class="form-control" asp-for="Nome" placeholder="Nome">
-    <input type="text" class="form-control" asp-for="Genero" placeholder="Gênero">
+    <label asp-for="Nome">Nome</label>
+    <input type="text" class="form-control" asp-for="Nome" placeholder="Nome da música"><br>
+    <label asp-for="Genero">Gênero</label>
+    <input type="text" class="form-control" asp-for="Genero" placeholder="Gênero da música"><br>
     <input type="hidden" asp-for="ArtistaId" value=@ViewData["user"] as string>
     <button class="btn btn-success">Cadastrar</button>
 </form>
